@@ -1,0 +1,29 @@
+<script type='text/javascript'>
+     google.load('visualization', '1', {'packages': ['geochart']});
+     google.setOnLoadCallback(drawMarkersMap);
+
+      function drawMarkersMap() {
+      var data = google.visualization.arrayToDataTable([
+        // Name, Lat, Long, Dot Color, Dot Size
+        ['<# b.1 #>', '<# c.1 #>', '<# a.1 #>', '<# d.1 #>', '<# e.1 #>'],
+<# end header #>
+
+<# start row #>
+        [<# row.b #>, <# row.c #>, '<# row.a #>', <# row.d #>, <# row.e #> ],
+
+<# end row #>
+
+<# start footer#>
+      ]);
+
+      var options = {
+        sizeAxis: { minValue: <#[var.size_min]#>, maxValue: <#[var.size_max]#> },
+        region: '<#[var.chart_region]#>',
+        displayMode: 'markers',
+        colorAxis: {colors: ['<#[var.color_min]#>', '<#[var.color_max]#>']}
+      };
+
+      var chart = new google.visualization.GeoChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    };
+    </script>

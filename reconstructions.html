@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Reconstructions - </title>
+    <!-- Bootstrap Styling -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+    <!-- Local Styling -->
+    <link rel="stylesheet" href="public/css/base.css" />
+  </head>
+  <body id="reconstructions">
+    <div id="bodyContent" class="body-container">
+      <div class="sidebar">
+        <div class="logo one-line">
+          <a href="/" class="logo-link">
+            <h1 class="one-line hide-text">Example Title</h1>
+          </a>
+        </div>
+        <div class="nav-list">
+          <ul id="navigation">
+            <li class="nav-item">
+              <a href="/" class="nav-link" data-target="home">
+                Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="./languages.html" class="nav-link" data-target="languages">
+                Languages
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="./words.html" class="nav-link" data-target="words">
+                Words
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link active" data-target="reconstructions">
+                Reconstructions
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="./download.html" class="nav-link" data-target="download">
+                Download
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="main-content">
+        <div class="common-content">
+          <div class="right-buttons">
+            <div class="button-wrapper solid light">
+              <a href="" class="button-link contactButton" id="contactButton">
+                Contact
+              </a>
+            </div>
+          </div>
+        </div>
+        <div id="reconstructions" class="page-section">
+          <div class="banner">
+            <div class="text-wrapper heading">
+              <h1 class="hide-text">Words</h1>
+            </div>
+            <div class="text-wrapper subheading">
+              <h4 class="hide-text">View all words in the dataset</h4>
+            </div>
+          </div>
+          <div class="content container">
+            <div class="table-wrapper">
+              <table id="reconstructionTable" class="table-fill">
+                <thead>
+                  <tr class="hidden">
+                    <th class="text-left">ID</th>
+                    <th class="text-left">Word</th>
+                    <th class="text-left">Form</th>
+                    <th class="text-left">Level</th>
+                    <th class="text-left">Gloss</th>
+                    <th class="text-left">Notes</th>
+                  </tr>
+                </thead>
+                <tbody class="table-hover">
+                  <div class="loading">
+                    Loading Reconstruction Data...
+                  </div>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- jQuery for DOM manipulation -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <!-- Popper for floating and aligned tooltips -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <!-- LocalStorage Polyfills (IE support)-->
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/localStorage/2.0.1/localStorage.min.js?swfURL=https://cdnjs.cloudflare.com/ajax/libs/localStorage/2.0.1/localStorage.swf"></script>
+    <!-- Google Charts JS -->
+    <script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>
+    <!-- Local JS -->
+    <script type='text/javascript' src='public/js/main2.js'></script>
+    <script type='text/javascript' src='public/js/sheetData.js'></script>
+  </body>
+</html>

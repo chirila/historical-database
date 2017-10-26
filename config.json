@@ -1,0 +1,65 @@
+{
+  "METADATA" : {
+    "database_name" : "Chirila DB",
+    "database_author" : "Claire Bowern",
+    "database_license" : "Creative Commons",
+    "database_url" : "https://chirila.yale.edu",
+    "google_sheet_url" : "https://docs.google.com/spreadsheets/d/1dRxvhFwfnOKGVK28LgKhYnmdfNOghmCBu0fLR6Uqxog/edit#gid=0",
+    "contact_email" : "example@example.com"
+  },
+  "HOME" : {
+    "title" : "Welcome to ChirilaDB",
+    "subtitle" : "A database of the language of Australia",
+    "FAQ" : [
+      {
+        "question" : "What does CHIRILA stand for?",
+        "answer" : "CHIRILA stands for Contemporary and Historical Reconstruction in the Indigenous Languages of Australia."
+      },
+      {
+        "question" : "Why that name?",
+        "answer" : "The name is based on the word tyirilya, a widespread term for ‘echidna‘ in the languages of Australia’s Western Desert Region. We wanted an acronym that describes the database, that relates to the languages we are working with, and that is pronounceable for English speakers."
+      },
+      {
+        "question" : "What’s in the CHIRILA database?",
+        "answer" : "The database is a lexical database (a database with words from different languages). Currently there are about 780,000 words, from all over Australia. The publicly available portion of the database, at present, is considerably smaller, representing the materials that we have received explicit permission to release."
+      },
+      {
+        "question" : "How will this database be useful to Aboriginal people?",
+        "answer" : "There are a couple of ways that this project might be useful to Aboriginal and Torres Strait Islander groups. If you are working on reviving your language and looking for materials, there might be some words from your language in the database. If your language was mostly written down a while ago, sometimes it can be hard to know exactly how words should be said. Sometimes we can work out what the right pronunciation is through looking at other languages. The database is digital, which means it is easy to produce word lists for individual languages. My team and I can help in making language materials like wordlist books, which could be the start of a dictionary. Please drop us a line if we can help with your program."
+      },
+      {
+        "question" : "Can I download data from the database?",
+        "answer" : "Yes! You can download the portions of the database; those lists for which we have received permission from the authors and/or communities to distribute data. We will be continuing to contact people and to prepare data for future releases. Please also see the acknowledgments. At present, it’s a bit under 20% of the total data holdings. I expect that to change over the next year or so. You can download the publicly available part of the dataset here or by clicking the download button in the left navigation"
+      },
+      {
+        "question" : "Who funds it?",
+        "answer" : "We gratefully acknowledge support from the USA’s National Science Foundation through grants <i>BCS-0844550</i> and <i>BCS-1423711</i>. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation."
+      },
+      {
+        "question" : "Acknowledgements",
+        "answer" : "Click <a href='http://www.pamanyungan.net/chirila/acknowledgments/'>here</a> to see a list of people who have helped make Chirila possible."
+      }
+    ]
+  },
+  "LANGUAGES" : {
+    "title" : "Languages",
+    "subtitle" : "View all languages in the dataset. Click on a row to view language details.",
+    "showMap" : true,
+    "mapCountryCode" : "AU"
+  },
+  "WORDS" : {
+    "title" : "Words",
+    "subtitle" : "View all words in the dataset"
+  },
+  "RECONSTRUCTIONS" : {
+    "title" : "Reconstructions",
+    "subtitle" : "View all reconstructions in the dataset"
+  },
+  "DOWNLOAD" : {
+    "title" : "Download",
+    "subtitle" : "Download the complete dataset (please read below)",
+    "download_heading" : "You are welcome to use Chirila data in your own projects, or for your own language work, subject to the following conditions:",
+    "download_text" : "Use of the database and its derivatives is strictly noncommercial. This will not change under any circumstances.<br><br>You need to submit the form below to download data, so that I can let you know about future upgrades to the database. I am collecting information about user interest in the data because I need to be able to include in my annual reports to the NSF what the project outcomes and broader impacts are; the best way to do that is to show what people are using the database for.<br><br>Researchers and communities shared data with me on the condition that it is acknowledged. I need end users of the data to also agree to those restrictions. In particular, you must acknowledge both the CHIRILA database (see here how to do that) and the original source of the data you are quoting. By using this data, you agree to let me know of any errors you find. The original importing of data into the database was tricky (to say the least) and errors no doubt remain. The best way to get a wellcurated scholarly resource for Australian languages is for people to let me know when they come across issues, so that we can fix them for future releases.<br><br>If you need data in other formats for your research, please contact me. I may be able to produce a file in the format you need from the original (underlying) database more easily than you manipulating the output. If this requires substantial work on my part to achieve, I would ask to be included as a coauthor on the resulting paper.",
+    "download_email_address" : "example@example.com"
+  }
+}

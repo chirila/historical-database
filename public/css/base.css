@@ -1,0 +1,374 @@
+/*
+  Chirila DB Builder Styling
+  CSS written by Abhi Nayar for Claire Bowern (Yale Linguistics Dep.)
+  --
+  NOTE: This is not the cleanest CSS, we wrote it to ship. Cleaning CSS is a TODO.
+  P.S: Please, please extend this stylesheet to make the DB less boring, we had to keep it standard to fit
+  all possible use cases without exluding anyone or any field.
+*/
+/*
+*
+  Typography:
+  --
+  Roboto (Google Material Design Font)
+  Body font-size: 16px;
+*
+*/
+/* Common Styling */
+* {
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  margin: 0;
+  padding: 0;
+  border: 0;
+} ol, ul {
+  list-style: none;
+}
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translate3d(0, -20%, 0); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes increaseWidth {
+  from { width: 0% }
+  to { width: 100% }
+}
+/* Body */
+body {
+  color: #323b40;
+  font-size: 16px;
+  line-height: 1.4em;
+  margin: 0;
+  min-height: 100%;
+  background-color: #fff;
+  font-family: 'Roboto', 'Avenir', 'Arial', -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  font-weight: 100;
+} .body-container {
+  height: 100vh;
+} .sidebar {
+  position: absolute;
+  z-index: 2;
+  height: 100%;
+  width: 220px;
+  background-color: #2d3033;
+  float: left;
+} .main-content {
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  height: 100vh;
+  width: 100%;
+  min-width: 800px;
+  overflow-x: scroll;
+  padding-left: 220px;
+  background-color: #121314;
+}
+/* Page Section */
+.page-section {
+  min-height: 100%;
+  width: 100%;
+  background-color: #e5e6eb;
+  transition: opacity 0.5s ease;
+} .page-section:nth-of-type(even) {
+  background-color: #f0f0f0;
+} .page-section.active {
+  z-index: 11;
+  display: block;
+} .page-section .container {
+  max-width: 1400px;
+  padding: 30px;
+  padding-bottom: 45px;
+} .page-section .padded {
+  padding: 0 45px;
+}
+/* Banner Section */
+.page-section .banner {
+  width: 100%;
+  color: #121314;
+  background-color: #f2f4f7;
+  border-bottom: 1px solid #dedede;
+  font-weight: 300;
+  padding: 20px 45px;
+} .banner h1 {
+  display: inline-block;
+  font-size: 32px;
+  transition: all 0.5s ease;
+  animation: fadeIn 0.5s;
+} .banner h4 {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 300;
+  transition: all 0.5s ease;
+  animation: fadeIn 0.75s;
+}
+/* Common Content */
+.common-content .right-buttons {
+  position: absolute;
+  z-index: 999;
+  right: 45px;
+  top: 32px;
+} .button-wrapper {
+  display: inline-block;
+  background-color: #26292b;
+  border-radius: 256px;
+} .button-wrapper:hover {
+  background-color: #555;
+  transition: color 0.2s ease;
+} .button-wrapper.light {
+  color: #fff;
+} .button-wrapper a {
+  display: inline-block;
+  padding: 10px 27px;
+  color: inherit;
+  font-size: 14px;
+  text-decoration: none;
+}
+/* Sidebar */
+.sidebar .logo {
+  background-color: #26292b;
+} .sidebar .logo.one-line {
+  padding: 40px 20px 30px 20px;
+} .sidebar .logo.two-line {
+  padding: 18px 20px 18px 20px;
+} .sidebar .logo h1 {
+  font-size: 24px;
+  color: #fafafa;
+  line-height: 1.4em;
+  text-transform: capitalize;
+  word-break: keep-all;
+  transition: all 0.25s ease;
+} .sidebar .logo h1.hide-text {
+  color: #999;
+} .sidebar .logo img {
+  max-height: 67px;
+  margin: 0 auto;
+} #navigation .nav-item a {
+  padding: 30px 20px;
+  border-bottom: 1px solid #333;
+  color: #aaa;
+} #navigation .nav-item a.active,
+#navigation .nav-item a:hover {
+  color: #fff;
+  background-color: #16191b;
+  border-color: transparent;
+}
+/* Table Styling */
+.table-wrapper {
+  display: block;
+  position: relative;
+} table {
+  background: #fff;
+  height: auto;
+  margin: 0 auto;
+  width: 95%;
+  padding:5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s;
+} th {
+  color: #D5DDE5;
+  background-color: #16191b;
+  border-bottom: 4px solid #9ea7af;
+  border-right:1px solid #343a45;
+  font-size: 16px;
+  font-weight: 100;
+  padding: 24px;
+  text-align: left;
+  vertical-align: middle;
+} tr {
+  position: relative;
+  cursor: pointer;
+  color: #666B85;
+  font-size: 14px;
+  transition: transform 0.12s ease;
+} tr:nth-of-type(even) td {
+  background: #f0f0f0;
+} tbody tr:hover {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.6);
+  border-bottom: 1px solid #aaa;
+  transform: scale(1.02);
+  transition: transform 0.12s ease;
+}  #languages tbody tr:after {
+  position: absolute;
+  z-index: 999;
+  float: right;
+  right: 40px;
+  margin-top: 5px;
+  content: 'View Details >';
+  font-size: 10px;
+  color: #e14f3d;
+  display: none;
+} #languages tbody tr:hover:after {
+  display: inline-block;
+} td {
+  background-color: #FFFFFF;
+  padding: 20px;
+  text-align: left;
+  vertical-align: middle;
+  font-weight: 300;
+  font-size: 14px;
+} #subpageWordTable {
+  margin-top: 30px;
+  margin-bottom: 60px;
+} #subpageWordTable tbody tr:hover {
+  transform: none;
+  border: none;
+  box-shadow: none;
+  cursor: auto;
+} #subpageWordTable tbody tr:after {
+  display: none !important;
+}
+/* Google Charts Styling */
+#chart_div {
+  width: 95%;
+  height: 420px;
+  margin: 0 auto;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+} svg[aria-label='A chart.'] {
+  width: 100% !important;
+} .google-visualization-tooltip-item p {
+  margin-bottom: 0;
+} .google-visualization-tooltip-item p b {
+  font-weight: 700;
+} #chart_div circle {
+  r : 7 !important;
+} #subpage_chart_div {
+  width: 90%;
+  height: 240px;
+  margin: 0 auto;
+  margin-top: 30px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+/* Homepage */
+.faq {
+  padding: 0 15px;
+} .faq ul {
+  list-style: none;
+} .faq-item {
+  margin-bottom: 20px;
+  animation-name: fadeInDown;
+  animation-duration: 0.5s;
+  animation-fill-mode: backwards;
+} .faq-item:nth-of-type(even) {
+  animation-delay: .25s;
+} .faq-item h6 {
+  display: inline-block;
+  font-size: 18px;
+  padding-bottom: 2px;
+  border-bottom: 2px solid #333;
+} .faq-item p {
+  font-size: 16px;
+  line-height: 1.4em;
+}
+/* Language Subpage */
+#language_subpage {
+  position: absolute;
+  top: 0;
+  left: 220px;
+  z-index: 9999;
+  width: 100%;
+  width: calc(100% - 220px);
+  height: auto;
+  background-color: #fff;
+  border-left: 10px solid #777;
+  display: none;
+} #language_subpage.shown {
+  display: block;
+} #language_subpage .banner {
+  position: fixed;
+  z-index: 9999;
+} .subpage-padded-content {
+  padding-top: 150px;
+} .subpage_links .title {
+  font-weight: bold;
+  font-size: 21px;
+  margin-bottom: 15px;
+} .subpage_links li {
+  line-height: 1.8em;
+} .subpage_links li .title {
+  font-size: 16px;
+} .back-button {
+  margin-bottom: 15px;
+  display: inline-block;
+  padding: 2px 5px;
+  border-bottom: 1px solid #000;
+  cursor: pointer;
+  font-weight: bold;
+}
+/* Download Page */
+#download .critical {
+  font-size: 18px;
+  margin-bottom: 15px;
+} #download .non-critical {
+  font-size: 16px;
+  line-height: 1.4em;
+} #download .download-form {
+  width: 500px;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 45px;
+  padding-bottom: 60px;
+} #download .download-form .form-title {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 18px;
+  border-bottom: 2px solid #333;
+} #download form {
+  max-width: 320px;
+  margin: 0 auto;
+} #download form input,
+#download form textarea {
+  display: block;
+  width: 100%;
+  color: #000;
+  border: 2px solid #777;
+  border-radius: 4px;
+  padding-left: 12px;
+  height: 44px;
+  font-size: 16px;
+  margin-bottom: 10px;
+} #download form textarea {
+  padding-top: 12px;
+  height: 180px;
+  max-height: 320px;
+  transition: height 0.12s ease;
+} #download form #submit {
+  color: #fff;
+  cursor: pointer;
+  background-color: #333;
+  height: 54px;
+  padding-left: 0;
+  transition: transform 0.12s ease;
+} #download form #submit:hover {
+  transform: scale(1.08);
+}
+/* Other/Random styles */
+.hide-text {
+  display: inline-block;
+  color: #999;
+  padding: 2px 0;
+  padding-right: 20px;
+  background-color: #999;
+} .loading {
+  max-width: 280px;
+  text-align: center;
+  font-size: 21px;
+  padding-top: 120px;
+  position: relative;
+  margin: 0 auto;
+} .loading:after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: -15px;
+  height: 2px;
+  width: 100%;
+  background-color: #000;
+  z-index: 99;
+  animation: increaseWidth 2s;
+} .hidden {
+  display: none !important;
+}

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Languages - </title>
+    <!-- Bootstrap Styling -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+    <!-- Local Styling -->
+    <link rel="stylesheet" href="public/css/base.css" />
+  </head>
+  <body id="languages">
+    <div id="bodyContent" class="body-container">
+      <div class="sidebar">
+        <div class="logo one-line">
+          <a href="/" class="logo-link">
+            <h1 class="one-line hide-text">Example Title</h1>
+          </a>
+        </div>
+        <div class="nav-list">
+          <ul id="navigation">
+            <li class="nav-item">
+              <a href="/" class="nav-link" data-target="home">
+                Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link active" data-target="languages">
+                Languages
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="./words.html" class="nav-link" data-target="words">
+                Words
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="./reconstructions.html" class="nav-link" data-target="reconstructions">
+                Reconstructions
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="./download.html" class="nav-link" data-target="download">
+                Download
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="main-content">
+        <div class="common-content">
+          <div class="right-buttons">
+            <div class="button-wrapper solid light">
+              <a href="" class="button-link contactButton" id="contactButton">
+                Contact
+              </a>
+            </div>
+          </div>
+        </div>
+        <div id="languages" class="page-section">
+          <div class="banner">
+            <div class="text-wrapper heading">
+              <h1 class="hide-text">Languages</h1>
+            </div>
+            <div class="text-wrapper subheading">
+              <h4 class="hide-text">View all languages in the dataset. Click on a row to view language details.</h4>
+            </div>
+          </div>
+          <div class="content container">
+            <div id="chart_div">
+              <div class="loading">
+                Loading Map Data...
+              </div>
+            </div>
+            <div class="table-wrapper">
+              <table id="langTable" class="table-fill">
+                <thead>
+                  <tr class="hidden">
+                    <th class="text-left">Language</th>
+                    <th class="text-left">Subgroup</th>
+                    <th class="text-left">Family</th>
+                    <th class="text-left">ISO Code</th>
+                    <th class="text-left">Glotttocode</th>
+                    <th class="text-left">AIATSIS Code</th>
+                    <th class="text-left">Variety</th>
+                  </tr>
+                </thead>
+                <tbody class="table-hover">
+                  <div class="loading">
+                    Loading Language Data...
+                  </div>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div id="language_subpage" class="">
+            <div class="banner">
+              <div class="back-button bold">
+                &larr; BACK
+              </div>
+              <div class="text-wrapper heading">
+                <h1 class="">Language Subpage</h1>
+              </div>
+              <div class="text-wrapper subheading">
+                <h4 class="">Details for this language, including full word list and web links.</h4>
+              </div>
+            </div>
+            <div class="subpage-padded-content">
+              <div id="subpage_chart_div"></div>
+              <div class="subpage_links container">
+                <div class="padded">
+                  <div class="row">
+                    <div class="col-6">
+                      <div class="title">
+                        Language Information
+                      </div>
+                      <div class="content">
+                        <ul>
+                          <li class="subpage_item subgroup">
+                            <span class="title">Subgroup:</span>
+                            <span class="subpage_subgroup">Central NSW</span>
+                          </li>
+                          <li class="subpage_item family">
+                            <span class="title">Family:</span>
+                            <span class="subpage_family">Pama-Nyungan</span>
+                          </li>
+                          <li class="subpage_item iso_code">
+                            <span class="title">ISO Code (639):</span>
+                            <span class="subpage_iso_code">kld</span>
+                          </li>
+                          <li class="subpage_item glottolog_id">
+                            <span class="title">Glottolog ID:</span>
+                            <span class="subpage_glottocode">yuwa1243</span>
+                          </li>
+                          <li class="subpage_item aiatsis_code">
+                            <span class="title">AIATSIS Code:</span>
+                            <span class="subpage_aiatsis_code">D54*</span>
+                          </li>
+                          <li class="subpage_item variety">
+                            <span class="title">Variety:</span>
+                            <span class="subpage_variety">Yuwaalayaay</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="title">
+                        Links
+                      </div>
+                      <div class="content">
+                        <ul>
+                          <li class="subpage_item glottolog_link">
+                            <a class="link" href="">Glottolog</span>
+                          </li>
+                          <li class="subpage_item wikipedia_link">
+                            <a class="link" href="">Wikipedia</span>
+                          </li>
+                          <li class="subpage_item ethnologue_link">
+                            <a class="link" href="">Ethnologue</span>
+                          </li>
+                          <li class="subpage_item endangered_lang_link">
+                            <a class="link" href="">Endangered Languages</span>
+                          </li>
+                          <li class="subpage_item olac_search_link">
+                            <a class="link" href="">Olac Search</span>
+                          </li>
+                          <li class="subpage_item aiatsis_code_link">
+                            <a class="link" href="">AIATSIS</span>
+                          </li>
+                          <li class="subpage_item google_scholar_link">
+                            <a class="link" href="">Google Scholar</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="table-wrapper">
+                  <table id="subpageWordTable" class="table-fill">
+                    <thead>
+                      <tr>
+                        <th class="text-left">ID</th>
+                        <th class="text-left">Word</th>
+                        <th class="text-left">Phonetic Form</th>
+                        <th class="text-left">Og. Gloss</th>
+                        <th class="text-left">Language Name</th>
+                        <th class="text-left">Part of Speech</th>
+                        <th class="text-left">Source</th>
+                      </tr>
+                    </thead>
+                    <tbody class="table-hover">
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- jQuery for DOM manipulation -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <!-- Popper for floating and aligned tooltips -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <!-- LocalStorage Polyfills (IE support)-->
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/localStorage/2.0.1/localStorage.min.js?swfURL=https://cdnjs.cloudflare.com/ajax/libs/localStorage/2.0.1/localStorage.swf"></script>
+    <!-- Google Charts JS -->
+    <script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>
+    <!-- Local JS -->
+    <script type='text/javascript' src='public/js/main2.js'></script>
+    <script type='text/javascript' src='public/js/sheetData.js'></script>
+  </body>
+</html>
