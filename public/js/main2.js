@@ -10,7 +10,7 @@ For instructions of customization and use, please reder to the Readme.Md file
 For other questions please contact Claire Bowern at claire[dot]bowern[at]yale.edu or Abhi Nayar at abhishek.nayar[at]yale[dot]edu
 */
 // Define global variables
-var _PATH_TO_JSON = "../../config.json";
+var _PATH_TO_JSON = "./config.json";
 globalConfigData = getCheckConfigData();
 //globalSheetData = getCheckSheetData();
 /*
