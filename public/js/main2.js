@@ -10,7 +10,7 @@ For instructions of customization and use, please reder to the Readme.Md file
 For other questions please contact Claire Bowern at claire[dot]bowern[at]yale.edu or Abhi Nayar at abhishek.nayar[at]yale[dot]edu
 */
 // Define global variables
-var _PATH_TO_JSON = "./config.json";
+var _PATH_TO_JSON = "../../config.json";
 globalConfigData = getCheckConfigData();
 //globalSheetData = getCheckSheetData();
 /*
@@ -39,7 +39,7 @@ function getCheckConfigData() {
       $.getJSON(_PATH_TO_JSON, function(AJAXdata) {
         //console.log(data);
         // We just SET the global variable here so we don't have to worry about concurrency, etc.
-        console.log(AJAXdata);
+        //console.log(AJAXdata);
         saveDataToLocalStorage('siteConfigData', AJAXdata);
         globalConfigData = AJAXdata;
         populateConfigData(AJAXdata);
@@ -74,6 +74,7 @@ function saveDataToLocalStorage(name, data) {
 }
 function getDataFromLocalStorage(name) {
   var data = localStorage.getItem(name);
+  data = JSON.stringify(data);
   if (data) return JSON.parse(data);
   else return false;
 }

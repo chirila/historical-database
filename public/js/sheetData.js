@@ -1,3 +1,4 @@
+
 // Updated Oct. 10th, 2017
 /*
 Sheet data population function for the pages that require
@@ -15,7 +16,7 @@ function getCheckSheetData() {
     var sheetData = getDataFromLocalStorage('siteSheetData');
     //console.log(configData);
     if (sheetData) {
-      console.log('here');
+      //console.log('here');
       populateSheetData(sheetData);
       return sheetData; // the config data was IN localStorage already, return it
     }
@@ -66,7 +67,7 @@ function getCheckSheetData() {
 }
 /* General Helpers */
 function populateSheetData(sheetData) {
-  console.log(sheetData);
+  //console.log(sheetData);
   var pageId = $('body').attr('id');
   if (pageId === 'languages') populateLanguagesSheetData(sheetData);
   else if (pageId === 'words') populateWordsSheetData(sheetData);
@@ -258,7 +259,7 @@ function populateTables(sheetData, tableToPopulate) {
 // This functions takes sheet data and populates the google chart
 // NOTE::: This function requires the Google Chart API to be included PRIOR to this script
 function populateGoogleChart(sheetData) {
-  console.log(sheetData);
+  //console.log(sheetData);
   // Unhide chart div if it is hidden
   $('#chart_div').show().removeClass('hidden');
   // load the google charts api + api key
@@ -278,20 +279,21 @@ function populateGoogleChart(sheetData) {
     data.addColumn('string', 'LANGUAGENAME');
     data.addColumn({'type': 'string', 'role': 'tooltip', 'p': {'html': true}})
     var dataRows = [];
+    sheetData = JSON.parse(sheetData);
     // loop through the sheet data object and do this for each language
-    sheetData.forEach(function(language, i) {
-      // define a data row
-      // html row
+    for (var i = 0; i < sheetData.length; i++) {
+      var language = sheetData[i];
       var htmlData = '<div><p><b>Language ID: </b>' + language.Language_id + '</p><p><b>Variety: </b>' + language.Variety + '</p><p><b>Subgroup: </b>' + language.Subgroup + '</p><p><b>Family: </b>' + language.Family + '</p></div>';
       var dataRow = [language.Latitude, language.Longitude, language.Language_name, htmlData];
       dataRows.push(dataRow);
       // add the row to the data object
       if (i == sheetData.length - 1)
-        populateMap(); // call the function once we've looped through the whole thing
-    })
+        populateMap(dataRows); // call the function once we've looped through the whole thing
+    }
     // abstract this to a seperate function so we can choose when to call it
     //instead of using Promises and polyfills
-    function populateMap() {
+    function populateMap(dataRows) {
+      //console.log(dataRows);
       // add the data rows to the data object (now that it's fulled)
       data.addRows(dataRows);
       // define the chart options (UI)
