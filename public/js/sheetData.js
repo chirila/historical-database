@@ -222,7 +222,7 @@ function populateTables(sheetData, tableToPopulate) {
     return true;
   } else {
     // if we DONT have the info in local storage then we call our worker into action
-    var uiWorker = new Worker('../../ui-worker.js');
+    var uiWorker = new Worker('public/js/ui-worker.js');
     // send the data and parse it on return
     uiWorker.addEventListener('message', function(e) {
       // Data returned is [langData, wordData, reconstructionData]
