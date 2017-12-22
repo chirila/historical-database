@@ -1,5 +1,5 @@
 addEventListener('message', function(e) {
-  console.log('UI WORKER', e.data);
+ //console.log('UI WORKER', e.data);
   // parse incoming data
   var data = e.data;
   // define vars.

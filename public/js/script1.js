@@ -41,27 +41,27 @@ function populate() {
     // This function literally just waits for the sheet data to come in
     // Then allows the rest of the sheet data population to happen
     function waitForSheetData() {
-      console.log('here');
+     //console.log('here');
       if (!sheetData || sheetData == null || typeof sheetData == undefined) {
         sheetData = getSheetDataFromLocalStorage();
         if (!sheetData || sheetData == null || typeof sheetData == undefined) {
-          console.log('Waiting', sheetData);
+         //console.log('Waiting', sheetData);
           setTimeout(waitForSheetData, 250);
         } else {
-          console.log('resuming', sheetData);
+         //console.log('resuming', sheetData);
           resumeMetaDataPopulation();
         }
       } else {
-        console.log('resuming', sheetData);
+       //console.log('resuming', sheetData);
         resumeMetaDataPopulation();
       }
     } waitForSheetData();
     function resumeMetaDataPopulation() {
-      console.log('resuming');
+     //console.log('resuming');
       // Now we have the sheetData (either from AJAX OR localStorage)
       // Let's go ahead and populate the data tables and graph
       // If showMap == true populate map, else hide it
-      console.log('pre map', sheetData);
+     //console.log('pre map', sheetData);
       (data.LANGUAGES.showMap == true) ? populateGoogleChart(sheetData) : $('#languages #chart_div').hide();
       // Now populate the data tables
       populateTables(sheetData);
@@ -141,7 +141,7 @@ function checkLocalStorageForSheetDataOrFetchIt(gSheetUrl) {
     // get the gsheet url from config.json
     // get the sheet key from the url
     sheetKey = getSheetKeyFromUrl(gSheetUrl);
-    console.log(sheetKey);
+   //console.log(sheetKey);
     // run an AJAX call on the spreadsheet to get data
     // Requests a list of values from the spreadsheet given a sheetkey
     // We stripped the sheet key so we could build the AjaxURL below (a JSONP returning google sheet url)
@@ -150,7 +150,7 @@ function checkLocalStorageForSheetDataOrFetchIt(gSheetUrl) {
       {
         dataType: "jsonp"
       }).then(function(response) {
-          console.log('Response from spreadsheet', response);
+         //console.log('Response from spreadsheet', response);
           // AJAX will return UNSTRUCTURED sheet data (as in dev. docs)
           // We want to structure it into a usable object
           // We DONT need to do this if we're just grabbing it from localStorage bc then assumably it's already structured...
@@ -158,10 +158,10 @@ function checkLocalStorageForSheetDataOrFetchIt(gSheetUrl) {
           sheetData = structureData(response);
           return sheetData;
       }, function(err) {
-          console.log("$.ajax() error:");
+         //console.log("$.ajax() error:");
           // ERROR CODE 203
           alert('A fatal error occured, please contact us with error code #203')
-          console.log(err);
+         //console.log(err);
       });
   }
   return sheetData;
@@ -230,7 +230,7 @@ function storeDataInLocalStorage(data) {
 // TODO: Check whether localStorage will overflow at some point....
 // NOTE::: THIS FUNCTION USES WEB WORKERS
 function populateTables(sheetData) {
-  console.log('CALLING UI WORKER');
+ //console.log('CALLING UI WORKER');
   // First we check whether we have the UI elements stored in local storage
   // If we do we append from there - No need for web workers
   var storedLangData = localStorage.getItem('langTableUIElements');
@@ -267,7 +267,7 @@ function populateTables(sheetData) {
       }
     }, false);
     // post the sheet data to the worker (we structured and stored it earlier)
-    console.log('CALLING UI WORKER');
+   //console.log('CALLING UI WORKER');
     uiWorker.postMessage(sheetData);
   }
 }
@@ -275,7 +275,7 @@ function populateTables(sheetData) {
 // This functions takes sheet data and populates the google chart
 // NOTE::: This function requires the Google Chart API to be included PRIOR to this script
 function populateGoogleChart(sheetData) {
-  console.log(sheetData);
+ //console.log(sheetData);
   // Unhide chart div if it is hidden
   $('#chart_div').show().removeClass('hidden');
   // load the google charts api + api key

@@ -14,7 +14,7 @@ addEventListener('message', function(e) {
   // first let's parse the JSON so we can actually access the data
   // entries = our parsed JSON and FULL data set
   var entries = JSON.parse(e.data);
-  console.log(entries);
+ //console.log(entries);
   // construct some container arrays here
   // we will use these below
   var structuredData = [],
@@ -53,7 +53,7 @@ addEventListener('message', function(e) {
     }
     //console.log(seenLanguages);
   });
-  console.log(structuredData);
+ //console.log(structuredData);
   postMessage(structuredData);
 }, false);
 
@@ -142,7 +142,7 @@ function pushLanguageData(languageData, structuredData, langNum) {
     var id = languageData.Language_id;
     var name = languageData.Language_name;
     // increment langNum count
-    console.log('PUSHING', languageData);
+   //console.log('PUSHING', languageData);
     structuredData.push(languageData);
     languageData = null;
   }
