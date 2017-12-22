@@ -176,7 +176,7 @@ function getSheetDataFromLocalStorage() {
 // and builds it into an object that we can use (of the form specified in the dev. docs.)
 // NOTE::: THIS FUNCTION USES WEB WORKERS
 function structureData(data) {
-  var dataWorker = new Worker('../../data-worker.js');
+  var dataWorker = new Worker('data-worker.js');
   dataWorker.addEventListener('message', function(e) {
     //console.log('Worker said: ', e.data);
     var data = e.data;
