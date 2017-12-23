@@ -8,19 +8,9 @@ addEventListener('message', function(e) {
   reconstructionUIArray = [];
   // populate Data function
   function populateData() {
-    console.log(data);
-    console.log("Is array? ");
-    var isArr = Array.isArray(data);
-    console.log(isArr);
-    if (!isArr) {
-        console.log("Then what are you, data?");
-        console.log(typeof(data));
-    }
     if (typeof(data) == 'string') {
         data = JSON.parse(data);
     }
-    console.log("Now what are you, data?");
-    console.log(typeof(data));
     data.forEach(function(language, i) {
       // work on Language data
       var langTableRow = '<tr data-target="/?wordID=' + language.id + '">' +
