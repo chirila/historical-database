@@ -1,15 +1,15 @@
 {
   "METADATA" : {
-    "database_name" : "Chirila DB for public distribution",
-    "database_author" : "Claire Bowern",
+    "database_name" : "Put the name of your database here",
+    "database_author" : "Your name here (original author Claire Bowern)",
     "database_license" : "Creative Commons",
-    "database_url" : "https://chirila.yale.edu",
-    "google_sheet_url" : "https://docs.google.com/spreadsheets/d/1xUz958HdtJZLh2qFWBmLotnG4CmlgjNLpWFew3cWdiQ/edit#gid=0",
-    "contact_email" : "claire.bowern@yale.edu"
+    "database_url" : "https://<your homepage here>",
+    "google_sheet_url" : "https://docs.google.com/spreadsheets/d/1CEjXLtDVY3SA_FAOjvUXJTEfcHTQkO1QIpN4cuxzEG0/edit#gid=0",
+    "contact_email" : "you@your.domain"
   },
   "HOME" : {
-    "title" : "Welcome to ChirilaDB",
-    "subtitle" : "A database of the language of Australia",
+    "title" : "Database title",
+    "subtitle" : "A database of <your languages here>",
     "FAQ" : [
       {
         "question" : "What does CHIRILA stand for?",
