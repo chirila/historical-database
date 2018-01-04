@@ -1,11 +1,11 @@
 {
   "METADATA" : {
-    "database_name" : "Chirila DB",
+    "database_name" : "Chirila DB for public distribution",
     "database_author" : "Claire Bowern",
     "database_license" : "Creative Commons",
     "database_url" : "https://chirila.yale.edu",
-    "google_sheet_url" : "https://docs.google.com/spreadsheets/d/1dRxvhFwfnOKGVK28LgKhYnmdfNOghmCBu0fLR6Uqxog/edit#gid=0",
-    "contact_email" : "example@example.com"
+    "google_sheet_url" : "https://docs.google.com/spreadsheets/d/1xUz958HdtJZLh2qFWBmLotnG4CmlgjNLpWFew3cWdiQ/edit#gid=0",
+    "contact_email" : "claire.bowern@yale.edu"
   },
   "HOME" : {
     "title" : "Welcome to ChirilaDB",
@@ -13,7 +13,7 @@
     "FAQ" : [
       {
         "question" : "What does CHIRILA stand for?",
-        "answer" : "CHIRILA stands for Contemporary and Historical Reconstruction in the Indigenous Languages of Australia."
+        "answer" : "CHIRILA stands for Contemporary and Historical Reconstruction in the Indigenous Languages of Australia. It's based on a Wati word for echidna."
       },
       {
         "question" : "Why that name?",

@@ -1,5 +1,5 @@
 addEventListener('message', function(e) {
-  console.log('UI WORKER', e.data);
+ //console.log('UI WORKER', e.data);
   // parse incoming data
   var data = e.data;
   // define vars.
@@ -8,6 +8,9 @@ addEventListener('message', function(e) {
   reconstructionUIArray = [];
   // populate Data function
   function populateData() {
+    if (typeof(data) == 'string') {
+        data = JSON.parse(data);
+    }
     data.forEach(function(language, i) {
       // work on Language data
       var langTableRow = '<tr data-target="/?wordID=' + language.id + '">' +
