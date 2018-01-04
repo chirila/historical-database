@@ -22,31 +22,31 @@ function getCheckSheetData() {
     }
     // Looks like the sheet data is NOT in LS
     else {
-      console.log('here');
+     //console.log('here');
       checkConfigDataAndContinue();
       function checkConfigDataAndContinue() {
         if (globalConfigData || typeof globalConfigData !== 'undefined') {
-          console.log(globalConfigData);
+         //console.log(globalConfigData);
           resumeSheetDataPopulation();
         } else {
           setTimeout(checkConfigDataAndContinue, 250);
         }
       }
       function resumeSheetDataPopulation() {
-        console.log('hereee');
+       //console.log('hereee');
         // let's get sheet data via AJAX
         // get the gsheet url from config.json
         // get the sheet key from the url
         var gSheetUrl = globalConfigData.METADATA.google_sheet_url;
         sheetKey = getSheetKeyFromUrl(gSheetUrl);
-        console.log(sheetKey);
+       //console.log(sheetKey);
         // run an AJAX call on the spreadsheet to get data
         // Requests a list of values from the spreadsheet given a sheetkey
         // We stripped the sheet key so we could build the AjaxURL below (a JSONP returning google sheet url)
         var ajaxUrl = 'https://spreadsheets.google.com/feeds/list/' + sheetKey + '/1/public/values?alt=json-in-script';
         $.ajax(ajaxUrl, { dataType: "jsonp" })
         .then(function(response) {
-          console.log('Response from spreadsheet', response);
+         //console.log('Response from spreadsheet', response);
           // AJAX will return UNSTRUCTURED sheet data (as in dev. docs)
           // We want to structure it into a usable object
           // We DONT need to do this if we're just grabbing it from localStorage bc then assumably it's already structured...
@@ -54,10 +54,10 @@ function getCheckSheetData() {
           sheetData = structureData(response);
           return sheetData;
         }, function(err) {
-            console.log("$.ajax() error:");
+           //console.log("$.ajax() error:");
             // ERROR CODE 203
             alert('A fatal error occured, please contact us with error code #203')
-            console.log(err);
+           //console.log(err);
         });
       }
     }
@@ -95,10 +95,10 @@ function populateLanguagesSheetData(sheetData) {
   })
 }
 function populateLanguageSubpage(sheetData, subpage) {
-  console.log(subpage);
+ //console.log(subpage);
   for (var i = 0; i < sheetData.length; i++) {
     var curId = sheetData[i].id;
-    console.log(curId);
+   //console.log(curId);
     if (subpage == curId) {
       var curData = sheetData[i];
       $('#language_subpage .heading h1').text(curData.Language_name);
@@ -139,7 +139,7 @@ function populateWordsSheetData(sheetData) {
   populateTables(sheetData, 2);
 }
 function populateReconstructionsSheetData(sheetData) {
-  console.log('pop');
+ //console.log('pop');
   populateTables(sheetData, 3);
 }
 // getSheetKeyFromUrl(url)
@@ -176,13 +176,13 @@ function getSheetDataFromLocalStorage() {
 // and builds it into an object that we can use (of the form specified in the dev. docs.)
 // NOTE::: THIS FUNCTION USES WEB WORKERS
 function structureData(data) {
-  var dataWorker = new Worker('../../data-worker.js');
+  var dataWorker = new Worker('public/js/data-worker.js');
   dataWorker.addEventListener('message', function(e) {
     //console.log('Worker said: ', e.data);
     var data = e.data;
     var error = saveDataToLocalStorage('siteSheetData', data);
     if (!error) {
-      console.log(error);
+     //console.log(error);
       alert("Your browser does not support local storage and thus will reload the full data set per page refresh. Please update your browser.")
     }
     // populate the data as needed
@@ -199,7 +199,7 @@ function structureData(data) {
 // TODO: Check whether localStorage will overflow at some point....
 // NOTE::: THIS FUNCTION USES WEB WORKERS
 function populateTables(sheetData, tableToPopulate) {
-  console.log('CALLING UI WORKER');
+ //console.log('CALLING UI WORKER');
   // First we check whether we have the UI elements stored in local storage
   // If we do we append from there - No need for web workers
   var storedLangData = getDataFromLocalStorage('langTableUIElements');
@@ -222,7 +222,7 @@ function populateTables(sheetData, tableToPopulate) {
     return true;
   } else {
     // if we DONT have the info in local storage then we call our worker into action
-    var uiWorker = new Worker('../../ui-worker.js');
+    var uiWorker = new Worker('public/js/ui-worker.js');
     // send the data and parse it on return
     uiWorker.addEventListener('message', function(e) {
       // Data returned is [langData, wordData, reconstructionData]
@@ -251,7 +251,7 @@ function populateTables(sheetData, tableToPopulate) {
         $('#reconstructionTable tbody').append(reconstructionData);
     }, false);
     // post the sheet data to the worker (we structured and stored it earlier)
-    console.log('CALLING UI WORKER');
+   //console.log('CALLING UI WORKER');
     uiWorker.postMessage(sheetData);
   }
 }
